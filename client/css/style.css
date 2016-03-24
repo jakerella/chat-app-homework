@@ -1,0 +1,10 @@
+
+#chat {
+    display: none;
+}
+
+#chat cite {
+    font-size: 0.8em;
+    color: #999;
+    margin-left: 1em;
+}
