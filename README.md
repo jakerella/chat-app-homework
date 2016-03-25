@@ -28,9 +28,11 @@ The two API endpoints you need to call using Ajax are below:
 
 * `POST /login`  
   Call this endpoint to log the user in. You must pass a JSON object in the POST body that looks like:  
-  `{ "username": "myname" }`
+  `{ "username": "myname" }`  
+  And you will get back an object with the `username` and `token` back (for use in authorization for future API requests)
 * `POST /chat`
   Call ths endpoint to send a chat message once you've logged in. The POST body must be JSON in the following format:  
-  `{ "message": "my chat message", "username": "myname" }`
+  `{ "message": "my chat message", "token": "..." }`  
+  Note that the token must be the same one that you received upon logging in!
 
-When you get a successful response from the `/login` endpoint then you need to hide the login form and show the chat message interface. You don't really _need_ to do anything when you send a chat message, but there are some nice things you could do for the user.
+When you get a successful response from the `/login` endpoint then you need to hide the login form and show the chat message interface. You don't really _need_ to do anything when you send a chat message, but there are some nice things you could do for the user - like clear out the input so they can type a new message!
