@@ -35,8 +35,8 @@ app.post('/chat', function handleChat(req, res) {
         res.status(403).json({ error: 'Sorry, but you did not provide a valid token!' });
         return;
     }
-    io.emit('message', { message: req.body.message || '', username: req.body.username });
-    res.json({ message: req.body.message || '', username: req.body.username });
+    io.emit('message', { message: req.body.message || '', username: req.session.username });
+    res.json({ message: req.body.message || '', username: req.session.username });
 });
 
 io.on('connection', function handleNewConnect(socket) {
