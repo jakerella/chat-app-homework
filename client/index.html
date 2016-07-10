@@ -3,26 +3,22 @@
     <head>
         <meta charset='utf-8'>
         <title>Chat App</title>
-        <link rel='stylesheet' href='css/style.css'>
     </head>
     <body>
-        <form id='login'>
-            <input type='text' class='username' placeholder='What username?' required>
+        <form class='login' action='/login' method='POST'>
+            <input type='text' class='username' placeholder='What username?' name='username' required>
             <input type='submit' value='Login'>
         </form>
 
-        <main id='chat'>
-            <section id='messages'></section>
+        <main class='chat'>
+            <section class='messages'></section>
 
-            <form id='send-message'>
-                <input type='text' class='message' placeholder='message...'>
+            <form class='send-message' action='/chat' method='POST'>
+                <input type='text' class='message' placeholder='message...' name='message' required>
                 <input type='submit' value='Send'>
             </form>
         </main>
 
-        <script src='js/jquery-1.12.2.min.js'></script>
-        <script src='js/socket.io-1.4.5.js'></script>
-        <script src='js/chat-api.js'></script>
-        <script src='js/chat-app.js'></script>
+
     </body>
 </html>
